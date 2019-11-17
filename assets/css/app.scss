@@ -1,0 +1,18 @@
+$primary: darken(#428bca, 20%);
+
+$theme-colors: (
+        "primary": #035388,
+        "secondary": #418AB7,
+        "thirdColor": #A9CDDD,
+);
+
+.navbar-nav li {
+  font-size: 1.5em;
+  margin-left: 50px;
+}
+
+img{
+  filter:invert(65%);
+}
+
+@import "~bootstrap/scss/bootstrap";
