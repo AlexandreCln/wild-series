@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6860283e-c8bd-425a-afa6-1d5e0f2ab8e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/WildController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WildController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +133,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/orleans-0919-php-toilettage" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -144,12 +143,13 @@
     <property name="settings.editor.selected.configurable" value="PhpAnnotations.UseAliasListForm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/wild" />
-      <recent name="$PROJECT_DIR$/assets/images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/templates/wild" />
+      <recent name="$PROJECT_DIR$/assets/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -181,7 +181,12 @@
       <workItem from="1574080449524" duration="3514000" />
       <workItem from="1574096748021" duration="4803000" />
       <workItem from="1574150534141" duration="1968000" />
-      <workItem from="1574166873758" duration="2875000" />
+      <workItem from="1574166873758" duration="3204000" />
+      <workItem from="1574180249678" duration="407000" />
+      <workItem from="1574180673443" duration="700000" />
+      <workItem from="1574236760657" duration="659000" />
+      <workItem from="1574239151015" duration="17000" />
+      <workItem from="1574330967599" duration="7850000" />
     </task>
     <servers />
   </component>
