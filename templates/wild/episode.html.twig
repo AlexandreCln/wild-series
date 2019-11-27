@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ episode.title }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="font-italic">{{ program.title }}</h1>
+        <h2>Saison {{ season.nbseason }} Episode {{ episode.number }}</h2>
+        <div class="card">
+            <h3 class="font-italic card-header">{{ episode.title }}</h3>
+            <p>{{ episode.synopsis }}</p>
+        </div>
+
+        <a href="{{ path('wild_season', {'id': season.id }) }}">
+            <button class="btn btn-primary">Voir les épisodes</button>
+        </a>
+        <a href="{{ path('wild_program', {'programName': program.title }) }}">
+            <button class="btn btn-primary">Voir le programme</button>
+        </a>
+        <a href="{{ path('wild_index') }}">
+            <button class="btn btn-primary">Retour aux séries</button>
+        </a>
+    </div>
+{% endblock %}
+
