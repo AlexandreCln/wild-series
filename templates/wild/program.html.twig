@@ -2,10 +2,13 @@
 
 {% block title %}{{ programName }}{% endblock %}
 
+{% block stylesheets %}{% endblock %}
+
 {% block body %}
     <div class="container">
         <div class="media-body">
-            <h1 class="mt-0">Saisons de {{ programName }} :</h1>
+            <h1 class="mt-0">{{ programName }} :</h1>
+            <p>{{ program.summary }}</p>
 
             {% for season in seasons %}
                 <a href="/wild/season/{{ season.id }}"><h2><span

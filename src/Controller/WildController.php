@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use App\Entity\Program;
+use App\Entity\Episode;
 use App\Entity\Season;
 use App\Repository\CategoryRepository;
 use App\Repository\ProgramRepository;
@@ -44,7 +45,7 @@ class WildController extends AbstractController
      *      defaults={"slug" = null},
      *      name="show")
      */
-    public function show(?string $slug):Response
+    public function show(?string $slug): Response
     {
         if (!$slug) {
             throw $this
@@ -59,13 +60,13 @@ class WildController extends AbstractController
             ->findOneBy(['title' => mb_strtolower($slug)]);
         if (!$program) {
             throw $this->createNotFoundException(
-                'No program with '.$slug.' title, found in program\'s table.'
+                'No program with ' . $slug . ' title, found in program\'s table.'
             );
         }
 
         return $this->render('wild/show.html.twig', [
             'program' => $program,
-            'slug'  => $slug,
+            'slug' => $slug,
         ]);
     }
 
@@ -75,9 +76,6 @@ class WildController extends AbstractController
      */
     public function showByCategory(string $categoryName, CategoryRepository $categoryRepository)
     {
-
-//        $categoryRepository = $this->getDoctrine()
-//            ->getRepository(Category::class);
 
         $category = $categoryRepository->findOneBy(['name' => mb_strtolower($categoryName)]);
 
@@ -89,7 +87,7 @@ class WildController extends AbstractController
 
         return $this->render('wild/category.html.twig', [
             'programsOfCategory' => $programs,
-            'categoryName'  => $categoryName
+            'categoryName' => $categoryName
         ]);
     }
 
@@ -117,6 +115,7 @@ class WildController extends AbstractController
 
         return $this->render('wild/program.html.twig', [
             'seasons' => $seasons,
+            'program' => $program,
             'programName' => $programName
         ]);
     }
@@ -135,6 +134,22 @@ class WildController extends AbstractController
             'season' => $season,
             'program' => $program,
             'episodes' => $episodes
+        ]);
+    }
+
+    /**
+     * @Route("/episode/{id}",
+     *      name="episode")
+     */
+    public function showEpidose(Episode $episode): Response
+    {
+        $season = $episode->getSeason();
+        $program = $season->getProgram();
+
+        return $this->render('wild/episode.html.twig', [
+            'episode' => $episode,
+            'program' => $program,
+            'season' => $season
         ]);
     }
 }
