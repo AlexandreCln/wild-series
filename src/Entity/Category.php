@@ -61,7 +61,7 @@ class Category
      */
     public function removeProgram(Program $program): self
     {
-        if ($this->program>contains($program)) {
+        if ($this->programs>contains($program)) {
             $this->programs->removeElement($program);
             // set the owning side to null (unless already changed)
             if ($program->getCategory() === $this) {
