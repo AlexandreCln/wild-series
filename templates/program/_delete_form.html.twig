@@ -2,8 +2,4 @@
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ program.id) }}">
     <button class="btn btn-danger">Supprimer</button>
-
-    <a href="{{ path('program_edit', {'id': program.id}) }}">
-        <button class="btn btn-primary">Éditer</button>
-    </a>
 </form>
