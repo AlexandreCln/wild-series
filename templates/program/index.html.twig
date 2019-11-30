@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Séries{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="m-5 d-flex justify-content-center">SÉRIES</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Affiche</th>
+                <th>Titre</th>
+                <th>Résumé</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for program in programs %}
+                <tr>
+                    <td>{{ program.id }}</td>
+                    <td><img class="img-thumbnail" src="{{ program.poster }}" alt="Affiche de {{ program.title }}"></td>
+                    <td>{{ program.title }}</td>
+                    <td>{{ program.summary }}</td>
+                    <td>
+                        <a href="{{ path('program_show', {'id': program.id}) }}">Plus de détails</a>
+                        <a href="{{ path('program_edit', {'id': program.id}) }}">Éditer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('program_new') }}">
+            <button class="m-3 btn btn-primary">Ajouter une série</button>
+        </a>
+     </div>
+{% endblock %}

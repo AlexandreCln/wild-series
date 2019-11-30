@@ -7,12 +7,14 @@ $theme-colors: (
 );
 
 .navbar-nav li {
+  display: flex;
+  justify-content: space-around;
   font-size: 1.5em;
   margin-left: 50px;
 }
 
-img{
-  filter:invert(65%);
+a{
+  text-decoration: none;
 }
 
 @import "~bootstrap/scss/bootstrap";
