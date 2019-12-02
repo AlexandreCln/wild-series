@@ -6,10 +6,14 @@ $theme-colors: (
         "thirdColor": #A9CDDD,
 );
 
+.logo {
+  filter: invert(80%);
+}
+
 .navbar-nav li {
   display: flex;
   justify-content: space-around;
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin-left: 50px;
 }
 
