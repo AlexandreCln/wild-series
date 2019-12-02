@@ -16,4 +16,7 @@ Symfony 12 - CRUD :
 https://drive.google.com/file/d/1iBZbpXJ0kdxDpp8f8Bt0GkIGIaxVuPoL/view?usp=sharing
 
 Symfony 13 - ManyToMany :
-https://drive.google.com/file/d/1CXYR5e0wti6OCbtUNnNEehXY1ZJ9_F7x/view?usp=sharing 
+https://drive.google.com/file/d/1CXYR5e0wti6OCbtUNnNEehXY1ZJ9_F7x/view?usp=sharing
+
+Symfony 14 - EntityType
+https://drive.google.com/file/d/1G3JrR5H8npUug8arm5slankV72fo0oUy/view?usp=sharing 
