@@ -22,7 +22,7 @@
                 <td>{{ actor.id }}</td>
                 <td>{{ actor.name }}</td>
                 <td>
-                    <a href="{{ path('actor_show', {'name': actor.name}) }}">
+                    <a href="{{ path('actor_show', {'id': actor.id}) }}">
                         <button class="btn btn-primary">Voir plus</button>
                     </a>
                     <a href="{{ path('actor_edit', {'id': actor.id}) }}">

@@ -50,18 +50,11 @@ class ActorController extends AbstractController
     }
 
     /**
-     * @Route("/{name}", name="actor_show",
-     *     defaults={"name"= null},
+     * @Route("/{id}", name="actor_show",
      *      methods={"GET"})
      */
-    public function show(ActorRepository $actorRepository, string $name, ProgramRepository $programRepository): Response
+    public function show(Actor $actor): Response
     {
-        $actorName = preg_replace(
-            '/-/',
-            ' ', ucwords(trim(strip_tags($name)), "-")
-        );
-
-        $actor = $actorRepository->findOneBy(['name' => $actorName]);
         $programs = $actor->getPrograms();
 
         return $this->render('actor/show.html.twig', [
