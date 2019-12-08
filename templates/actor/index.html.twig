@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Actor index{% endblock %}
 
@@ -22,10 +22,10 @@
                 <td>{{ actor.id }}</td>
                 <td>{{ actor.name }}</td>
                 <td>
-                    <a href="{{ path('actor_show', {'id': actor.id}) }}">
+                    <a href="{{ path('actor_show', {'slug': actor.slug}) }}">
                         <button class="btn btn-primary">Voir plus</button>
                     </a>
-                    <a href="{{ path('actor_edit', {'id': actor.id}) }}">
+                    <a href="{{ path('actor_edit', {'slug': actor.slug}) }}">
                         <button class="btn btn-primary">Éditer</button>
                     </a>
                 </td>

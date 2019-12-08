@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}{{ program.title }}{% endblock %}
 
@@ -13,18 +13,21 @@
             <h2>Liste des épisodes :</h2>
             <ul>
                 {% for episode in episodes %}
-                <a href="{{ path('wild_episode', {'id': episode.id }) }}"><li>Episode {{ episode.number }} : {{ episode.title }}</li></a>
+                    <li>
+                        <a href="{{ path('wild_episode', {'id': episode.id }) }}">
+                            Episode {{ episode.number }} : {{ episode.title }} </a>
+                    </li>
                 {% endfor %}
             </ul>
 
-                <h2><span class="badge badge-secondary"></span></h2>
+            <h2><span class="badge badge-secondary"></span></h2>
 
         </div>
 
         <a href="{{ path('program_index') }}">
             <button class="btn btn-primary">Retour aux séries</button>
         </a>
-        <a href="{{ path('wild_program', {'programName': program.title }) }}">
+        <a href="{{ path('program_show', {'slug': program.slug }) }}">
             <button class="btn btn-primary">Voir le programme</button>
         </a>
     </div>

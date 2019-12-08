@@ -45,7 +45,7 @@ class WildController extends AbstractController
      *      defaults={"slug" = null},
      *      name="show")
      */
-    public function show(?string $slug): Response
+    public function show(?string $slug, ProgramRepository $programRepository): Response
     {
         if (!$slug) {
             throw $this
@@ -55,9 +55,7 @@ class WildController extends AbstractController
             '/-/',
             ' ', ucwords(trim(strip_tags($slug)), "-")
         );
-        $program = $this->getDoctrine()
-            ->getRepository(Program::class)
-            ->findOneBy(['title' => mb_strtolower($slug)]);
+        $program = $programRepository->findOneBy(['title' => mb_strtolower($slug)]);
         if (!$program) {
             throw $this->createNotFoundException(
                 'No program with ' . $slug . ' title, found in program\'s table.'
@@ -141,7 +139,7 @@ class WildController extends AbstractController
      * @Route("/episode/{id}",
      *      name="episode")
      */
-    public function showEpidose(Episode $episode): Response
+    public function showEpisode(Episode $episode): Response
     {
         $season = $episode->getSeason();
         $program = $season->getProgram();
