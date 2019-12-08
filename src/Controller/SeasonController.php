@@ -53,8 +53,14 @@ class SeasonController extends AbstractController
      */
     public function show(Season $season): Response
     {
+        $program = $season->getProgram();
+        $episodes = $season->getEpisodes();
+
+
         return $this->render('season/show.html.twig', [
             'season' => $season,
+            'program' => $program,
+            'episodes' => $episodes
         ]);
     }
 
