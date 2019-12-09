@@ -1,6 +1,30 @@
 @import 'vars';
+@import 'navbar';
 
-a:target {
+*{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: #5eb5e0;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: 18pt;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:target, button:target, .nav-link {
   outline: 0;
 }
 
@@ -15,9 +39,7 @@ a:target {
   margin-left: 50px;
 }
 
-a{
-  text-decoration: none;
-}
+
 
 /* Carousel */
 

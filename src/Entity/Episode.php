@@ -33,7 +33,6 @@ class Episode
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Season", inversedBy="episodes")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $season;
 

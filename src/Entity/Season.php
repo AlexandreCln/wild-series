@@ -35,12 +35,11 @@ class Season
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Program", inversedBy="seasons")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $program;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Episode", mappedBy="season", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Episode", mappedBy="season", cascade={"remove"})
      */
     private $episodes;
 
