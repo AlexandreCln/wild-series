@@ -3,10 +3,11 @@
 {% block title %}Episodes{% endblock %}
 
 {% block body %}
-    <h1 class="title">ÉPISODES</h1>
+    <div class="container">
+        <h1 class="title">ÉPISODES</h1>
 
-    <table class="table">
-        <thead>
+        <table class="table">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Titre</th>
@@ -14,28 +15,29 @@
                 <th>Synopsis</th>
                 <th>actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for episode in episodes %}
-            <tr>
-                <td>{{ episode.id }}</td>
-                <td>{{ episode.title }}</td>
-                <td>{{ episode.number }}</td>
-                <td>{{ episode.synopsis }}</td>
-                <td>
-                    <a href="{{ path('episode_show', {'slug': episode.slug}) }}">Plus de détails</a>
-                    <a href="{{ path('episode_edit', {'slug': episode.slug}) }}">Éditer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for episode in episodes %}
+                <tr>
+                    <td>{{ episode.id }}</td>
+                    <td>{{ episode.title }}</td>
+                    <td>{{ episode.number }}</td>
+                    <td>{{ episode.synopsis }}</td>
+                    <td>
+                        <a href="{{ path('episode_show', {'slug': episode.slug}) }}">Plus de détails</a>
+                        <a href="{{ path('episode_edit', {'slug': episode.slug}) }}">Éditer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('episode_new') }}">
-        <button class="m-3 btn btn-primary">Ajouter un épisode</button>
-    </a>
+        <a href="{{ path('episode_new') }}">
+            <button class="m-3 btn btn-primary">Ajouter un épisode</button>
+        </a>
+    </div>
 {% endblock %}
