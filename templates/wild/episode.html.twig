@@ -4,10 +4,10 @@
 
 {% block body %}
     <div class="container">
-        <h1 class="font-italic">{{ program.title }}</h1>
+        <h1 class="font-italic title">{{ program.title }}</h1>
         <h2>Saison {{ season.nbseason }} Episode {{ episode.number }}</h2>
-        <div class="card">
-            <h3 class="font-italic card-header">{{ episode.title }}</h3>
+        <div class="card mb-3">
+            <h3 class="font-italic card-header bg-primary text-light">{{ episode.title }}</h3>
             <p>{{ episode.synopsis }}</p>
         </div>
 
@@ -21,5 +21,43 @@
             <button class="btn btn-primary">Retour aux séries</button>
         </a>
     </div>
-{% endblock %}
 
+    <div class="bg-thirdColor container p-1 mt-5">
+        <h2 class="title">Laisser un commentaire</h2>
+
+        {% if is_granted('ROLE_SUBSCRIBERAUTHOR') %}
+            <div class="m-5  border-primary">
+                {{ include('comment/_form.html.twig') }}
+            </div>
+        {% else %}
+            <div class="d-flex justify-content-center">
+                <p>Vous devez être connecté pour cela !</p>
+                <a href="{{ path('app_login') }}">
+                    <button class="btn btn-primary ml-3">Se connecter</button>
+                </a>
+            </div>
+        {% endif %}
+
+        <hr>
+        <h2 class="m-5">Commentaires :</h2>
+
+        {% for comment in comments %}
+            <div class="card ml-5 mr-5 border-primary">
+                <div class="card-header d-flex justify-content-between bg-secondary">
+                    <h3 class="font-italic">Par {{ comment.author.username }}:</h3>
+                    <h3 class="font-italic">{{ comment.date|date('d-m-Y') }}</h3>
+                </div>
+
+                <p class="bg-thirdColor p-2">{{ comment.rate }} / 5</p> <br>
+
+                <p class="p-2">{{ comment.comment }}</p>
+            </div>
+
+            {% if comment.author.id == app.user.id or is_granted('ROLE_ADMIN') %}
+            <div class="mb-4 ml-5">
+                {{ include('comment/_delete_form.html.twig') }}
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

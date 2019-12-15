@@ -14,7 +14,7 @@
             <ul>
                 {% for episode in episodes %}
                     <li>
-                        <a href="{{ path('wild_episode', {'id': episode.id }) }}">
+                        <a href="{{ path('wild_episode', {'slug': episode.slug }) }}">
                             Episode {{ episode.number }} : {{ episode.title }} </a>
                     </li>
                 {% endfor %}
