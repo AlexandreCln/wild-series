@@ -30,9 +30,17 @@ security:
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
 
+
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/program, roles: ROLE_SUBSCRIBER }
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+
+    #    Exemple : les utilisateurs ayant le ROLE_ADMIN héritent des mêmes droits que tous les ROLE_SUBSCRIBER et
+    #    indirectement des mêmes droits que ceux ayant le ROLE_USER
+    role_hierarchy:
+        ROLE_SUBSCRIBER: ROLE_USER
+        ROLE_ADMIN:  ROLE_SUBSCRIBER
