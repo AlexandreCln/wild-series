@@ -1,10 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Catégories{% endblock %}
 
 {% block body %}
     <div class="container">
-        <h1 class="m-5 d-flex justify-content-center">CATÉGORIES</h1>
+        <h1 class="title">Catégories</h1>
 
         <table class="table">
             <thead>
@@ -32,6 +32,8 @@
             </tbody>
         </table>
 
-            <a href="{{ path('category_new') }}">Créer un nouveau</a>
+            <a href="{{ path('category_new') }}">
+                <button class="btn btn-primary">Ajouter une catégorie</button>
+            </a>
     </div>
 {% endblock %}

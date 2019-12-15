@@ -1,14 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Actor{% endblock %}
 
 {% block body %}
     <div class="container">
-        <h1 class="m-5 d-flex justify-content-center">{{ actor.name }}</h1>
+        <h1 class="title">{{ actor.name }}</h1>
         <h2>Apparait dans :</h2>
         {% for program in programs %}
             <ul>
-                <a href="{{ path('program_show', {'id': program.id}) }}"><li>{{ program.title }}</li></a>
+                <a href="{{ path('program_show', {'slug': program.slug}) }}"><li>{{ program.title }}</li></a>
             </ul>
 
         {% endfor %}
@@ -19,7 +19,7 @@
             </a>
 
             <div class="d-flex">
-                <a href="{{ path('actor_edit', {'id': actor.id}) }}">
+                <a href="{{ path('actor_edit', {'slug': actor.slug}) }}">
                     <button class="btn btn-primary">Éditer</button>
                 </a>
 

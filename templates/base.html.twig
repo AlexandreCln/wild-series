@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %}</title>
-        {{ encore_entry_link_tags('app') }}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Wild Series{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    {{ encore_entry_link_tags('app') }}
+    {% block stylesheets %}{% endblock %}
+</head>
 
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% include '_navbar.html.twig' %}
-        {% block body %}{% endblock %}
+<body>
 
-        {{ encore_entry_script_tags('app') }}
-        {% block javascripts %}{% endblock %}
-    </body>
+<header>
+    {% block navbar %}{% endblock %}
+</header>
+
+{% block body %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{{ encore_entry_script_tags('app') }}
+{% block javascripts %}{% endblock %}
+
+</body>
 </html>

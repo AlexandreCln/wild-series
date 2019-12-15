@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Edit Episode{% endblock %}
 
 {% block body %}
-    <h1>Edit Episode</h1>
+    <h1 class="title">Edit Episode</h1>
 
     {{ include('episode/_form.html.twig', {'button_label': 'Update'}) }}
 

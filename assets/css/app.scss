@@ -1,10 +1,32 @@
-$primary: darken(#428bca, 20%);
+@import 'vars';
+@import 'navbar';
 
-$theme-colors: (
-        "primary": #035388,
-        "secondary": #418AB7,
-        "thirdColor": #A9CDDD,
-);
+*{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: #5eb5e0;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: 18pt;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:target, button:target, .nav-link {
+  outline: 0;
+}
 
 .logo {
   filter: invert(80%);
@@ -17,8 +39,15 @@ $theme-colors: (
   margin-left: 50px;
 }
 
-a{
-  text-decoration: none;
+
+
+/* Carousel */
+
+.title_carousel {
+  margin-bottom: 10%;
+  font-size: 3.5vw;
+  color: var(--paragraphTitle);
+  text-shadow: 0 0 10px var(--backgroundColorFooter);;
 }
 
 @import "~bootstrap/scss/bootstrap";

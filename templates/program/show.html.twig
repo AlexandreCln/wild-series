@@ -1,11 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Program{% endblock %}
 
 {% block body %}
     <div class="container">
-
-        <h1 class="m-5 d-flex justify-content-center">{{ program.title }}</h1>
+        <h1 class="title">{{ program.title }}</h1>
 
         <div class="d-flex">
             <img class="img-thumbnail" src="{{ program.poster }}" alt="Affiche de {{ program.title }}">
@@ -29,7 +28,9 @@
                     <strong>Acteurs :</strong>
                     <ul>
                         {% for actor in program.actors %}
-                            <a href="{{ path('actor_show', {'id': actor.id}) }}"><li>{{ actor.name }} </li></a>
+                            <a href="{{ path('actor_show', {'slug': actor.slug}) }}">
+                                <li>{{ actor.name }} </li>
+                            </a>
                         {% else %}
                             <li>Aucun acteur pour cette série</li>
                         {% endfor %}
@@ -37,8 +38,9 @@
                 </div>
                 <div class="m-3">
                     {% for season in seasons %}
-                        <a href="/wild/season/{{ season.id }}"><h2><span
-                                        class="badge badge-secondary">Saison {{ season.nbseason }}</span> ({{ season.year }})</h2>
+                        <a href="{{ path('season_show', {'id': season.id}) }}"><h2><span
+                                        class="badge badge-secondary">Saison {{ season.nbseason }}</span>
+                                ({{ season.year }})</h2>
                         </a>
                     {% endfor %}
                 </div>
@@ -48,16 +50,17 @@
 
         <div class="d-flex justify-content-between mt-3">
             <div>
-            <a href="{{ path('program_index') }}">
-                <button class="btn btn-primary">Revenir aux séries</button>
-            </a>
-
-            <a href="{{ path('program_edit', {'id': program.id}) }}">
-                <button class="btn btn-primary">Éditer</button>
-            </a>
+                <a href="{{ path('program_index') }}">
+                    <button class="btn btn-primary">Revenir aux séries</button>
+                </a>
             </div>
-            {{ include('program/_delete_form.html.twig') }}
+
+            <div class="d-flex">
+                <a href="{{ path('program_edit', {'slug': program.slug}) }}">
+                    <button class="btn btn-primary mr-1">Éditer</button>
+                </a>
+                {{ include('program/_delete_form.html.twig') }}
+            </div>
         </div>
     </div>
-
 {% endblock %}
