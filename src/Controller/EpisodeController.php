@@ -7,7 +7,6 @@ use App\Entity\Episode;
 use App\Form\CommentType;
 use App\Form\EpisodeType;
 use App\Repository\EpisodeRepository;
-use App\Repository\ProgramRepository;
 use App\Service\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -63,6 +62,7 @@ class EpisodeController extends AbstractController
      * @Route("/{slug}", name="episode_show", methods={"GET","POST"})
      * @param Episode $episode
      * @return Response
+     * @throws \Exception
      */
     public function show(Episode $episode, Request $request): Response
     {
