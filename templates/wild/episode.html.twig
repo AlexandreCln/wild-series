@@ -53,10 +53,12 @@
                 <p class="p-2">{{ comment.comment }}</p>
             </div>
 
-            {% if comment.author.id == app.user.id or is_granted('ROLE_ADMIN') %}
-            <div class="mb-4 ml-5">
-                {{ include('comment/_delete_form.html.twig') }}
-            </div>
+            {% if is_granted('ROLE_SUBSCRIBERAUTHOR') %}
+                {% if comment.author.id == app.user.id or is_granted('ROLE_ADMIN') %}
+                <div class="mb-4 ml-5">
+                    {{ include('comment/_delete_form.html.twig') }}
+                </div>
+                {% endif %}
         {% endif %}
         {% endfor %}
     </div>

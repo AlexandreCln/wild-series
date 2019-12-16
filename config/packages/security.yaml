@@ -39,8 +39,8 @@ security:
         - { path: ^/program, roles: ROLE_ADMIN }
         - { path: ^/season, roles: ROLE_ADMIN }
         - { path: ^/episode, roles: ROLE_ADMIN }
-        - { path: ^/comment, roles: ROLE_ADMIN }
         - { path: ^/actor, roles: ROLE_ADMIN }
+        - { path: ^/comment, roles: ROLE_SUBSCRIBERAUTHOR }
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
 
@@ -48,5 +48,4 @@ security:
     #    indirectement des mêmes droits que ceux ayant le ROLE_USER
     role_hierarchy:
         ROLE_SUBSCRIBER: ROLE_USER
-        ROLE_ADMIN:  ROLE_SUBSCRIBER
->>>>>>> f94f2bb83c2a7d026fd0af5db9c423b3f7570e83
+        ROLE_ADMIN:  ROLE_SUBSCRIBERAUTHOR
