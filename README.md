@@ -24,4 +24,6 @@
 [Symfony 18 - Gestion Utilisateurs](https://drive.google.com/file/d/1Mi3kj1t6QXb_WGBAjORTCzUSDtnukWw5/view?usp=sharing)
 
 [Symfony 19 - Sécurisation Routes](https://drive.google.com/file/d/1IafUbzdnKbMXJfo8sVsIqELNgePvSz46/view?usp=sharing)
+
+[Symfony 20 - Inscriptions](https://drive.google.com/file/d/1jr2DRXaYy1Xx6TlZDo2YjvRJmj-4a1v2/view?usp=sharing)
  
