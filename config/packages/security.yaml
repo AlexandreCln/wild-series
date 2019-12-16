@@ -42,7 +42,7 @@ security:
         - { path: ^/actor, roles: ROLE_ADMIN }
         - { path: ^/comment, roles: ROLE_SUBSCRIBERAUTHOR }
         # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        # - { path: ^/account, roles: ROLE_USER }
 
     #    Exemple : les utilisateurs ayant le ROLE_ADMIN héritent des mêmes droits que tous les ROLE_SUBSCRIBER et
     #    indirectement des mêmes droits que ceux ayant le ROLE_USER

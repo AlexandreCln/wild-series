@@ -10,7 +10,7 @@ class CategoryFixtures extends Fixture
 {
     const CATEGORIES = [
         'Action',
-        'Aventure',
+        'Humour',
         'Animation',
         'Fantastique',
         'Horreur',
