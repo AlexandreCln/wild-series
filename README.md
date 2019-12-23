@@ -26,4 +26,6 @@
 [Symfony 19 - Sécurisation Routes](https://drive.google.com/file/d/1IafUbzdnKbMXJfo8sVsIqELNgePvSz46/view?usp=sharing)
 
 [Symfony 20 - Inscriptions](https://drive.google.com/file/d/1jr2DRXaYy1Xx6TlZDo2YjvRJmj-4a1v2/view?usp=sharing)
+
+[Symfony 21 - Validations](https://drive.google.com/open?id=1-5XMB4JoqQ7TNbjlJvfc2H2hDyKttsDJ)
  
