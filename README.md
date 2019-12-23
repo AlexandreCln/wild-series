@@ -28,4 +28,7 @@
 [Symfony 20 - Inscriptions](https://drive.google.com/file/d/1jr2DRXaYy1Xx6TlZDo2YjvRJmj-4a1v2/view?usp=sharing)
 
 [Symfony 21 - Validations](https://drive.google.com/open?id=1-5XMB4JoqQ7TNbjlJvfc2H2hDyKttsDJ)
+
+[Symfony 22 - Query builder](https://drive.google.com/file/d/1QVqBACkPxP2rBUOXsuoNwQeobd3tcPWa/view?usp=sharing)
+ 
  
