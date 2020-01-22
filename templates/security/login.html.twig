@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+        <div class="login">
+            <h2 class="login-header bg-primary">Connectez vous</h2>
+
+            <div class="login-container">
+
+                <p><input type="email" value="{{ last_username }}" name="email" class="form-control" required autofocus>
+                </p>
+                <p><input type="password" name="password" class="form-control" required></p>
+
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}">
+
+                <p><input type="submit" class="bg-primary mt-3" value="Connexion"></p>
+               <a href="{{ path('app_register') }}"><p><input type="button" class="bg-secondary text-light mt-1" value="S'inscrire"></p></a>
+            </div>
+        </div>
+    </form>
+{% endblock %}

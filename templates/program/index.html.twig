@@ -1,0 +1,55 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Séries{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="title">Séries</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th></th>
+                <th>Titre</th>
+                <th>Résumé</th>
+                <th>Acteurs</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for program in programs %}
+                <tr>
+                    <td>{{ program.id }}</td>
+                    <td><img class="img-thumbnail" src="{{ program.poster }}" alt="Affiche de {{ program.title }}"></td>
+                    <td>{{ program.title }}</td>
+                    <td>{{ program.summary }}</td>
+                    <td>
+                        {% for actor in program.actors %}
+                            {{ actor.name }},
+                        {% else %}
+                            Aucun Acteurs !
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <a href="{{ path('program_show', {'slug': program.slug}) }}">
+                            <button class="btn btn-primary m-1">Voir</button>
+                        </a>
+                        <a href="{{ path('program_edit', {'slug': program.slug}) }}">
+                            <button class="btn btn-primary m-1">Éditer</button>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('program_new') }}">
+            <button class="m-3 btn btn-primary">Ajouter une série</button>
+        </a>
+     </div>
+{% endblock %}

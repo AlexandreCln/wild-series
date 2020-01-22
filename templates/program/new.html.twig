@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Ajouter Série{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="title">Ajouter une Série</h1>
+
+        {{ include('program/_form.html.twig') }}
+
+        <a href="{{ path('program_index') }}">
+            <button class="btn btn-primary mt-1">Retour</button>
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Acteurs{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+
+    <h1 class="title">Acteurs</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actor in actors %}
+            <tr>
+                <td>{{ actor.id }}</td>
+                <td>{{ actor.name }}</td>
+                <td>
+                    <a href="{{ path('actor_show', {'slug': actor.slug}) }}">
+                        <button class="btn btn-primary">Voir plus</button>
+                    </a>
+                    <a href="{{ path('actor_edit', {'slug': actor.slug}) }}">
+                        <button class="btn btn-primary">Éditer</button>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('actor_new') }}">
+        <button class="btn btn-primary">Ajouter un acteur</button>
+    </a>
+    </div>
+{% endblock %}

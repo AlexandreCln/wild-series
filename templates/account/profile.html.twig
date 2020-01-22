@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1 class="title">Mon Compte :</h1>
+    <div class="container w-25">
+        <h3 class="bg-secondary p-2">Nom d'utilisateur :</h3>
+        <p>{{ app.user.username }}</p>
+        <h3 class="bg-secondary p-2">Bio :</h3>
+        <p>{{ app.user.bio }}</p>
+        <h3 class="bg-secondary p-2">Email :</h3>
+        <p>{{ app.user.email }}</p>
+        <h3 class="bg-secondary p-2">Roles :</h3>
+        {% for role in app.user.roles %}
+            <p>{{ role|trim('ROLE_', side='left')|capitalize }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

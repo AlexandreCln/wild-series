@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block body %}
+    <h1 class="title">Bienvenue sur Wild Séries !</h1>
+    <h2 class="m-5">Les nouveautés :</h2>
+
+    <div class="container-fluid">
+        <div class="row">
+            {% for program in programs %}
+                <div class="col-lg-3 ml-auto mt-5">
+                    <div class="panel">
+                        <div class="panel-heading bg-primary text-light p-3">
+                            <h2>{{ program.title }}</h2>
+                        </div>
+                        <div class="panel-body"
+                             style="box-shadow:0 -12px 13px black inset;">
+
+                            <div class="boximg">
+                                <img src="{{ program.poster }}"
+                                     class="img-responsive w-100 h-100">
+                                <span class="label label-danger date">25 December 2015</span>
+                                <span class="likebut glyphicon glyphicon-tag"></span>
+                            </div>
+
+                            <br>
+                            <p class="pull-left">{{ program.summary }}<br>
+                                <span class="glyphicon glyphicon-star" style="font-size:18px;"></span>
+
+                                <span class="glyphicon glyphicon-star-empty" style="font-size:18px;"></span>
+                            </p>
+
+                            <span class="badge pull-right bg-primary">/5</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

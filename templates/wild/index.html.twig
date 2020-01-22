@@ -1,6 +1,32 @@
-{% extends '/base.html.twig' %}
+{% extends 'layout.html.twig' %}
+
+{% block title %}Toutes les séries{% endblock %}
 
 {% block body %}
-    <h1>{{ website }} index</h1>
-{% endblock %}
+    <div class="container">
+        <h1>Toutes les séries : </h1>
 
+        {% for program in programs %}
+
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-2" style="max-width: 540px;">
+                        <img src="{{ program.poster }}" class="card-img" alt="Affiche {{ program.title }} }">
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ program.title }}</h2>
+                            <p class="card-text">{{ program.summary }}</p>
+                            <p class="card-text"><small class="text-muted">{{ program.category.name }}</small></p>
+                            <a href="/wild/program/{{ program.title }}">
+                                <button class="btn-primary btn">Plus d'infos</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            Aucune série trouvée.
+        {% endfor %}
+    </div>
+{% endblock %}
