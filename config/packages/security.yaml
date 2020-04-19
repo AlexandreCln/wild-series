@@ -35,7 +35,12 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/program, roles: ROLE_SUBSCRIBER }
+        - { path: ^/category, roles: ROLE_ADMIN }
+        - { path: ^/program, roles: ROLE_ADMIN }
+        - { path: ^/season, roles: ROLE_ADMIN }
+        - { path: ^/episode, roles: ROLE_ADMIN }
+        - { path: ^/actor, roles: ROLE_ADMIN }
+        - { path: ^/comment, roles: ROLE_SUBSCRIBERAUTHOR }
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
 
@@ -43,4 +48,4 @@ security:
     #    indirectement des mêmes droits que ceux ayant le ROLE_USER
     role_hierarchy:
         ROLE_SUBSCRIBER: ROLE_USER
-        ROLE_ADMIN:  ROLE_SUBSCRIBER
+        ROLE_ADMIN:  ROLE_SUBSCRIBERAUTHOR

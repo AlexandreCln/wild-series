@@ -21,8 +21,9 @@
                     <td>{{ category.name }}</td>
                     <td>
                         <a href="{{ path('category_show', {'id': category.id}) }}">Plus de détails</a>
-                        <a href="{{ path('category_edit', {'id': category.id}) }}">Éditer</a>
-                    </td>
+                        {% if is_granted("ROLE_ADMIN") %}
+                            <a href="{{ path('category_edit', { 'id': category.id} ) }}">Éditer</a>
+                        {%endif%}                    </td>
                 </tr>
             {% else %}
                 <tr>

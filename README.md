@@ -1,4 +1,5 @@
 # Wild Series 
+
 **Fictional project to realize exercises for learning development with Symfony 4.4**
 
 *Exercices:*

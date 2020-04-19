@@ -89,6 +89,8 @@ class CommentController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('comment_index');
+        $episode = $comment->getEpisode();
+
+        return $this->redirectToRoute('wild_episode', ['slug' => $episode->getSlug()]);
     }
 }
