@@ -3,19 +3,19 @@
 
 *Exercices:*
 
-Doctrine
-ManyToOne
-Bidirectional Relations
-Param converter
-Form
-CRUD
-Form Validations
-ManyToMany relation
-EntityType
-Fixtures
-Services
-Send Emails
-User Administration
-Connexion
-Flash messages
-DQL Custom queries
+1. Doctrine
+2. ManyToOne
+3. Bidirectional Relations
+4. 1Param converter
+5. Form
+6. CRUD
+7. Form Validations
+8. ManyToMany relation
+9. EntityType
+10. Fixtures
+11. Services
+12. Send Emails
+13. User Administration
+14. Connexion
+15. Flash messages
+16. DQL Custom queries
